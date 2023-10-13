@@ -9,16 +9,9 @@ import os
  
 def get_color():
     # 获取随机颜色
-    # get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
-    # color_list = get_colors(100)
-    #return random.choice(color_list)
-
-    # 获取随机颜色
-    red = random.randint(0, 255)
-    green = random.randint(0, 255)
-    blue = random.randint(0, 255)
-    color = "#{:02x}{:02x}{:02x}".format(red, green, blue)
-    return color
+    get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
+    color_list = get_colors(100)
+    return random.choice(color_list)
  
  
 def get_access_token():
@@ -145,41 +138,40 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     data = {
         "touser": to_user,
         "template_id": config["template_id"],
-        "url": "http://weixin.qq.com",
+        "url": "http://weixin.qq.com/download",
         "topcolor": "#FF0000",
         "data": {
             "date": {
                 "value": "{} {}".format(today, week),
-               "color": "#00FFFF"
+                "color": get_color()
             },
             "region": {
                 "value": region_name,
-                "color": "#808A87"
+                "color": get_color()
             },
             "weather": {
                 "value": weather,
-                 "color": "#ED9121"
+                "color": get_color()
             },
             "temp": {
                 "value": temp,
-                 "color": "#00FF00"
+                "color": get_color()
             },
-         
             "wind_dir": {
                 "value": wind_dir,
-                "color": "#FF6100"
+                "color": get_color()
             },
             "love_day": {
                 "value": love_days,
-                 "color": "#87CEEB"
+                "color": get_color()
             },
             "note_en": {
                 "value": note_en,
-                "color": "#FF8000"
+                "color": get_color()
             },
             "note_ch": {
                 "value": note_ch,
-                 "color": "#FF8000"
+                "color": get_color()
             }
         }
     }
@@ -237,5 +229,5 @@ if __name__ == "__main__":
         note_ch, note_en = get_ciba()
     # 公众号推送消息
     for user in users:
-        send_message(user, accessToken, region, weather, temp, wind_dir, birthday1,note_ch, note_en)
+        send_message(user, accessToken, region, weather, temp, wind_dir, note_ch, note_en)
     os.system("pause")
