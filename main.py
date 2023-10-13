@@ -150,35 +150,35 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
         "data": {
             "date": {
                 "value": "{} {}".format(today, week),
-                "color": get_color()
+               "color": "#00FFFF"
             },
             "region": {
                 "value": region_name,
-                "color": get_color()
+                "color": "#808A87"
             },
             "weather": {
                 "value": weather,
-                "color": get_color()
+                 "color": "#ED9121"
             },
             "temp": {
                 "value": temp,
-                "color": get_color()
+                 "color": "#00FF00"
             },
             "wind_dir": {
                 "value": wind_dir,
-                "color": get_color()
+                " "color": "#FF6100"
             },
             "love_day": {
                 "value": love_days,
-                "color": get_color()
+                 "color": "#87CEEB"
             },
             "note_en": {
                 "value": note_en,
-                "color": get_color()
+                "color": "#FF8000"
             },
             "note_ch": {
                 "value": note_ch,
-                "color": get_color()
+                 "color": "#FF8000"
             }
         }
     }
