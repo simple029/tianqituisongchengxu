@@ -14,7 +14,7 @@ def get_color():
     #return random.choice(color_list)
 
     # 获取随机颜色
-	red = random.randint(0, 255)
+    red = random.randint(0, 255)
     green = random.randint(0, 255)
     blue = random.randint(0, 255)
     color = "#{:02x}{:02x}{:02x}".format(red, green, blue)
