@@ -9,9 +9,16 @@ import os
  
 def get_color():
     # 获取随机颜色
-    get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
-    color_list = get_colors(100)
-    return random.choice(color_list)
+    # get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
+    # color_list = get_colors(100)
+    #return random.choice(color_list)
+
+    # 获取随机颜色
+	red = random.randint(0, 255)
+    green = random.randint(0, 255)
+    blue = random.randint(0, 255)
+    color = "#{:02x}{:02x}{:02x}".format(red, green, blue)
+    return color
  
  
 def get_access_token():
